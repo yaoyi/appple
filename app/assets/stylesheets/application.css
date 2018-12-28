@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background: #f6f6f6;
+}
+
+.col-md-4 {
+  width: 33.33333333%;
+}
+
+.col-md-8 {
+  width: 66.66666667%
+}
+
+.col-md-4, .col-md-8 {
+  float: left;
+}

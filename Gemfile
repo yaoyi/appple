@@ -33,7 +33,14 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'jquery-rails'
+gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'vinted-blurrily', '~> 1.2'
+gem 'react-rails', '~> 2.4', '>= 2.4.7'
+
+# Using pry on prod too, better than irb
+gem 'pry-rails'
+gem 'awesome_print', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,8 @@
+.search-wrapper
+  %h1
+    Word Selector
+  .row
+    .col-md-8
+      %input#search{:type => "text", :autocomplete => "off", :placeholder => "Type in characters"}/
+    .col-md-4
+      = render partial: 'my_words'
