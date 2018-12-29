@@ -16,6 +16,8 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -36,7 +38,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'vinted-blurrily', '~> 1.2'
-gem 'react-rails', '~> 2.4', '>= 2.4.7'
+
+gem 'react_on_rails', '~> 11.2', '>= 11.2.2'
 
 # Using pry on prod too, better than irb
 gem 'pry-rails'

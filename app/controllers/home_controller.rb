@@ -1,6 +1,12 @@
 class HomeController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:save]
+
   def index
     @my_words = MyWord.all
+  end
+
+  def react
+
   end
 
   def search
@@ -18,5 +24,15 @@ class HomeController < ApplicationController
     word = Word.find(params[:id])
     word.create_my_word if !word.my_word
     @my_words = MyWord.all
+    respond_to do |wants|
+      wants.json {
+        render json: @my_words.map{|w| {id: w.id, text: w.text}}
+      }
+    end
+  end
+
+  def my_words
+    my_words = MyWord.all
+    render json: my_words.map{|w| {id: w.id, text: w.text}}
   end
 end
