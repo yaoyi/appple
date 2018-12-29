@@ -20,7 +20,7 @@ set :ssh_options, {
 # set :pty, true
 
 set :linked_files, %w{db/production.sqlite3 config/database.yml .ruby-version .env words.trigrams}
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system node_modules}
 
 set :default_env, { path: "/opt/rbenv/shims:$PATH" }
 
@@ -45,3 +45,16 @@ set :puma_worker_timeout, nil
 set :puma_preload_app, true
 set :puma_plugins, []  #accept array of plugins
 set :nginx_use_ssl, false
+
+before "deploy:assets:precompile", "deploy:yarn_install"
+
+namespace :deploy do
+  desc 'Run rake yarn:install'
+  task :yarn_install do
+    on roles(:web) do
+      within release_path do
+        execute("cd #{release_path} && yarn install")
+      end
+    end
+  end
+end

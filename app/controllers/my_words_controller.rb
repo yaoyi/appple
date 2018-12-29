@@ -5,6 +5,7 @@ class MyWordsController < ApplicationController
     my_word.destroy
     @my_words = MyWord.all
     respond_to do |wants|
+      wants.js {}
       wants.json {
         render json: @my_words.map{|w| {id: w.id, text: w.text}}
       }

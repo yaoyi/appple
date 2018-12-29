@@ -25,6 +25,7 @@ class HomeController < ApplicationController
     word.create_my_word if !word.my_word
     @my_words = MyWord.all
     respond_to do |wants|
+      wants.js {}
       wants.json {
         render json: @my_words.map{|w| {id: w.id, text: w.text}}
       }
