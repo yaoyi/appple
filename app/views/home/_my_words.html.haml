@@ -2,3 +2,5 @@
   - @my_words.each do |my_word|
     %li.my-word
       = my_word.text
+      %a{:href => my_word_path(my_word), "data-remote" => true, "data-method" => "delete"}
+        x

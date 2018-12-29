@@ -19,7 +19,7 @@ set :ssh_options, {
 # Default value for :pty is false
 # set :pty, true
 
-set :linked_files, %w{db/production.sqlite3 config/database.yml .ruby-version .env}
+set :linked_files, %w{db/production.sqlite3 config/database.yml .ruby-version .env words.trigrams}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 set :default_env, { path: "/opt/rbenv/shims:$PATH" }

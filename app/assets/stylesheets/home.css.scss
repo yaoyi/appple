@@ -52,6 +52,32 @@
 
   ul.my-words {
     margin-top: 0px;
+    list-style: none;
+    padding: 0px;
+  }
+
+  li.my-word {
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    a {
+      opacity: 0;
+      float: right;
+      color: #333;
+      text-decoration: none;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+    &:hover {
+      background: #ddd;
+      a {
+        opacity: 1;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
   }
 }
 
